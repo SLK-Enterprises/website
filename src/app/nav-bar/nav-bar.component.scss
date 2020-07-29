@@ -1,0 +1,48 @@
+.nav-bar {
+  box-shadow: 1px 1px 10px grey;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  .top {
+    height: 80px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .options {
+      display: flex;
+      .option {
+        margin: 20px;
+        color: rgba(245, 245, 245, 0.692);
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    .logo {
+      width: 50px;
+      margin-left: 50px;
+      cursor: pointer;
+      img {
+        height: 70px;
+      }
+    }
+  }
+  .drop-menu {
+    padding: 10px;
+    .options {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .option {
+        mat-icon {
+          vertical-align: middle;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

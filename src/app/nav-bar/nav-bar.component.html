@@ -1,0 +1,52 @@
+<div class="nav-bar">
+  <div class="top">
+    <div class="logo">
+      <img src="assets/slklogo.png" />
+    </div>
+
+    <div class="options">
+      <div class="option">
+        <h3>Home</h3>
+      </div>
+      <div class="option">
+        <h3>Contact</h3>
+      </div>
+      <div class="option">
+        <h3>Feedback</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-menu">
+    <!-- Drop Down Options -->
+    <div class="options">
+      <!-- Services -->
+      <button mat-stroked-button class="option" [matMenuTriggerFor]="menu">
+        <h3>Services <mat-icon>keyboard_arrow_down</mat-icon></h3>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="option('dth')">
+            <span>DTH Services</span>
+          </button>
+          <button mat-menu-item (click)="option('cctv')">
+            <span>CCTV Services</span>
+          </button>
+          <button mat-menu-item (click)="option('net')">
+            <span>Internet Services</span>
+          </button>
+        </mat-menu>
+      </button>
+
+      <!-- Gallery -->
+      <button mat-stroked-button class="option" (click)="gallery()">
+        <h3>Gallery <mat-icon>keyboard_arrow_up</mat-icon></h3>
+      </button>
+
+      <!-- Search -->
+      <mat-form-field class="option">
+        <!-- <mat-label>Search</mat-label> -->
+        <span matPrefix><mat-icon>search</mat-icon> &nbsp;</span>
+        <input matInput />
+      </mat-form-field>
+    </div>
+  </div>
+</div>
