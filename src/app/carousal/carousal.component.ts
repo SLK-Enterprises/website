@@ -55,7 +55,7 @@ export class CarousalComponent implements OnInit {
   }
 
   leave() {
-    this.interval = setInterval(this.move, 2000);
+    this.interval = setInterval(this.move, 1500);
   }
 
   ngOnInit(): void {

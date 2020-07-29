@@ -6,25 +6,37 @@
   align-items: center;
 
   .carousal-track {
-    width: 95%;
+    height: 430px;
+    width: 85% !important;
     margin: 30px;
     display: flex;
     align-items: center;
 
     .left {
-      transform: translateX(30px);
+      transform: translateX(30px) !important;
     }
     .right {
-      transform: translateX(-30px);
+      transform: translateX(-30px) !important;
     }
 
     .icon {
       cursor: pointer;
+      color: black;
+      box-shadow: 2px 2px 5px grey;
+      border-radius: 10%;
+      background-color: white;
+      vertical-align: middle;
+      // transform: translate(-30px, 2px) !important;
+    }
+
+    mat-icon {
+      transform: translateY(2px) !important;
     }
 
     img {
       display: block;
       margin: auto;
+      height: 100%;
       width: 100%;
       border-radius: 20px;
     }
