@@ -39,8 +39,7 @@
       justify-content: space-around;
       .option {
         mat-icon {
-          vertical-align: middle;
-          font-size: 20px;
+          vertical-align: middle !important;
         }
       }
     }

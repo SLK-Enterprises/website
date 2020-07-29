@@ -11,9 +11,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { GalleryComponent } from './nav-bar/gallery/gallery.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { CarousalComponent } from './carousal/carousal.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, GalleryComponent],
+  declarations: [AppComponent, NavBarComponent, GalleryComponent, CarousalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +26,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatInputModule,
     MatBottomSheetModule,
     MatGridListModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

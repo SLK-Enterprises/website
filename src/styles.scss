@@ -22,3 +22,12 @@ h6 {
 .bottom-sheet {
   min-width: 100vw !important;
 }
+
+.mat-form-field-infix,
+.mat-form-field-wrapper {
+  padding: 0px !important;
+}
+
+.mat-form-field-prefix {
+  top: 9px !important;
+}

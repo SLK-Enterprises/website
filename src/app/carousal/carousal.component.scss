@@ -1,0 +1,47 @@
+.carousal {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .carousal-track {
+    width: 95%;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+
+    .left {
+      transform: translateX(30px);
+    }
+    .right {
+      transform: translateX(-30px);
+    }
+
+    .icon {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  .dots {
+    display: flex;
+    padding: 5px;
+    transform: translateY(-50px);
+    color: rgba(128, 128, 128, 0.74);
+
+    .active {
+      color: black;
+    }
+
+    .dot {
+      cursor: pointer;
+    }
+  }
+}
