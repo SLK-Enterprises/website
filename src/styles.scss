@@ -9,10 +9,16 @@ h6 {
   margin: 0 !important;
 }
 
-// html,
-// body {
-//   background-color: #f6f8fe;
-// }
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+// @import url("assets/fonts/main.ttf");
 
 * {
   user-select: none;
@@ -23,15 +29,10 @@ h6 {
   min-width: 100vw !important;
 }
 
-.mat-form-field-infix,
-.mat-form-field-wrapper {
-  padding: 0px !important;
+.mat-content {
+  align-items: center;
 }
 
-.mat-form-field-prefix {
-  top: 9px !important;
-}
-
-.mat-input-element {
-  transform: translate(2px, 2px) !important;
+.mat-expansion-panel {
+  flex-direction: column;
 }

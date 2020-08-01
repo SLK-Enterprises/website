@@ -1,0 +1,20 @@
+.contact {
+  mat-icon {
+    vertical-align: middle;
+    font-size: 30px;
+    transform: translateY(-5px) !important;
+    margin-right: 42px;
+    margin-left: 35px;
+  }
+
+  .detail {
+    margin: 10px;
+    .bt {
+      margin: 10px;
+      padding: 10px;
+    }
+    .wh {
+      width: 100px;
+    }
+  }
+}

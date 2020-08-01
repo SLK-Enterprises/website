@@ -1,0 +1,16 @@
+.dth-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  .choice {
+    padding: 20px;
+    margin: 10px;
+    margin-right: 50px;
+    border-radius: 20px;
+
+    &:hover {
+      color: rgb(243, 21, 26);
+    }
+  }
+}

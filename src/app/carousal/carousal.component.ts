@@ -7,16 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarousalComponent implements OnInit {
   constructor() {}
-  current = 'assets/carousal/carousal-1.png';
+  current = 'assets/carousal/1.jpg';
   currentIndex = 0;
   previousIndex = 0;
   interval;
 
-  links = [
-    'assets/carousal/carousal-1.png',
-    'assets/carousal/carousal-2.png',
-    'assets/carousal/carousal-3.png',
-  ];
+  links = ['assets/carousal/1.jpg'];
 
   set() {
     document
@@ -55,7 +51,7 @@ export class CarousalComponent implements OnInit {
   }
 
   leave() {
-    this.interval = setInterval(this.move, 1500);
+    // this.interval = setInterval(this.move, 1500);
   }
 
   ngOnInit(): void {

@@ -1,16 +1,15 @@
 .carousal {
-  width: 100%;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 
   .carousal-track {
-    height: 430px;
-    width: 85% !important;
-    margin: 30px;
+    height: 400px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     .left {
       transform: translateX(30px) !important;
@@ -34,11 +33,8 @@
     }
 
     img {
-      display: block;
-      margin: auto;
+      width: 90%;
       height: 100%;
-      width: 100%;
-      border-radius: 20px;
     }
   }
 
@@ -54,6 +50,18 @@
 
     .dot {
       cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousal {
+    height: 180px;
+    .carousal-track {
+      height: 100%;
+      img {
+        height: 100%;
+      }
     }
   }
 }

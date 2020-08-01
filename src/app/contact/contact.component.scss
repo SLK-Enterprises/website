@@ -1,0 +1,51 @@
+.contact {
+  margin-top: 50px;
+  .details {
+    background-color: rgb(15, 15, 15);
+    color: rgba(0, 0, 0, 0.938);
+    padding: 20px;
+    padding-left: 50px;
+    color: white;
+
+    .sub {
+      display: flex;
+      text-align: center;
+      align-items: center;
+
+      .title {
+        font-size: 30px;
+        padding-right: 5px;
+        color: #f3151a;
+      }
+
+      .phone {
+        font-size: 40px;
+      }
+
+      .sub-title {
+        font-size: 30px;
+      }
+    }
+  }
+  .last-item {
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    .details {
+      .sub {
+        .title {
+          font-size: 15px;
+        }
+        .sub-title {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

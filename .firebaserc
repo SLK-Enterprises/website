@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "slk-enterprises": {
+      "hosting": {
+        "website": [
+          "slk-enterprises"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<mat-accordion class="list">
+  <mat-expansion-panel
+    *ngFor="let item of providers; let i = index"
+    [expanded]="i === step"
+    (opened)="setStep(i)"
+    hideToggle
+    class="item"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title class="header">
+        <div class="image">
+          <img src="{{ item.link }}" />
+        </div>
+      </mat-panel-title>
+      <mat-panel-description class="title">
+        <h2>{{ item.name }}</h2>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div class="content">
+      <div class="choices">
+        <mat-form-field appearance="outline">
+          <mat-label>Types</mat-label>
+          <mat-select [(value)]="type">
+            <mat-option>None</mat-option>
+            <mat-option
+              *ngFor="let choice of item.types"
+              value="{{ choice }}"
+              >{{ choice }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <div class="table">
+          <div>
+            <h3 class="title" matRipple (click)="sortData('duration', i)">
+              &nbsp;Duration<mat-icon>{{
+                duration ? "arrow_upward" : "arrow_downward"
+              }}</mat-icon>
+            </h3>
+            <br />
+            <h3 class="row" *ngFor="let plan of getPlan(i)">
+              {{ plan.duration }} Month
+            </h3>
+          </div>
+          <mat-divider [vertical]="true"></mat-divider>
+          <div matRipple>
+            <h3 class="title" matRipple (click)="sortData('price', i)">
+              &nbsp;Price<mat-icon>{{
+                price ? "arrow_upward" : "arrow_downward"
+              }}</mat-icon>
+            </h3>
+            <br />
+
+            <h3 class="row" *ngFor="let plan of getPlan(i)">
+              ₹ {{ plan.price }}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
