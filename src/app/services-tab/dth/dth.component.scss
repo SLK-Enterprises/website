@@ -4,10 +4,21 @@
   justify-content: start;
 
   .choice {
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     margin-right: 50px;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 50px;
+      margin: 10px;
+    }
+
+    h2 {
+      font-size: 1.2em;
+    }
 
     &:hover {
       color: rgb(243, 21, 26);

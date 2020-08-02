@@ -1,16 +1,5 @@
 <div class="carousal">
-  <div class="carousal-track" (mouseenter)="enter()" (mouseleave)="leave()">
-    <div class="icon left" (click)="moved()">
-      <mat-icon>keyboard_arrow_left</mat-icon>
-    </div>
-    <img src="{{ current }}" />
-    <div class="icon right" (click)="move()">
-      <mat-icon>keyboard_arrow_right</mat-icon>
-    </div>
+  <div class="carousal-image" *ngFor="let item of links">
+    <img src="{{ item.link }}" />
   </div>
-  <!-- <div class="dots">
-    <h1 id="0" class="active dot" (click)="custom(0)">_&nbsp;</h1>
-    <h1 id="1" class="dot" (click)="custom(1)">_&nbsp;</h1>
-    <h1 id="2" class="dot" (click)="custom(2)">_&nbsp;</h1>
-  </div> -->
 </div>

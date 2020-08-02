@@ -69,7 +69,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     MatSelectModule,
     MatSortModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule,
+    // AngularFireAnalyticsModule,
     AngularFirestoreModule,
   ],
   providers: [],

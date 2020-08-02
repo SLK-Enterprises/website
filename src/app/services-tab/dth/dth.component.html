@@ -1,9 +1,22 @@
 <div class="dth-choice">
   <div class="choice" matRipple mat-dialog-close (click)="nav('dth-provider')">
-    <h2>New Connection</h2>
+    <img
+      style="
+        margin-right: 10px;
+        width: 80px;
+        transform: translateX(-15px);
+        height: 4em;
+      "
+      src="{{ icons.dthnew }}"
+    />
+    <h2 style="transform: translateX(-30px);">New Connection</h2>
   </div>
   <div class="choice" matRipple mat-dialog-close>
+    <img src="{{ icons.dthhths }}" />
     <h2>House to House Lifting</h2>
   </div>
-  <div class="choice" matRipple mat-dialog-close><h2>Complaints</h2></div>
+  <div class="choice" matRipple mat-dialog-close>
+    <img src="{{ icons.complaints }}" />
+    <h2>Complaints</h2>
+  </div>
 </div>

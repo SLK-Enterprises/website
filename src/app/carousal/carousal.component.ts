@@ -1,60 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { DataService } from '../services/data/data.service';
 
 @Component({
   selector: 'carousal',
   templateUrl: './carousal.component.html',
   styleUrls: ['./carousal.component.scss'],
 })
-export class CarousalComponent implements OnInit {
-  constructor() {}
-  current = 'assets/carousal/1.jpg';
-  currentIndex = 0;
-  previousIndex = 0;
-  interval;
+export class CarousalComponent implements AfterViewInit {
+  links: any[] = ['assets/carousal/1.jpg'];
+  ind = 0;
 
-  links = ['assets/carousal/1.jpg'];
-
-  set() {
-    document
-      .getElementById(this.currentIndex.toString())
-      .classList.add('active');
-    document
-      .getElementById(this.previousIndex.toString())
-      .classList.remove('active');
-  }
+  constructor(public data: DataService) {}
 
   move = () => {
-    this.previousIndex = this.currentIndex;
-    this.currentIndex++;
-    if (this.currentIndex == 3) this.currentIndex = 0;
-    this.current = this.links[this.currentIndex];
-    this.set();
+    console.log(this.ind);
+
+    let carousal: any = document.getElementsByClassName('carousal-image');
+    this.ind = this.ind + 1;
+
+    if (this.ind == this.links.length) {
+      this.ind = 0;
+    }
+
+    for (let i = 0; i < carousal.length; i++) {
+      carousal[i].style.transform = 'translate(' + this.ind * -95 + '%)';
+    }
   };
 
-  moved() {
-    this.previousIndex = this.currentIndex;
-    this.currentIndex--;
-    if (this.currentIndex == -1) this.currentIndex = 2;
-    this.current = this.links[this.currentIndex];
-    this.set();
-  }
-
-  custom(index) {
-    this.previousIndex = this.currentIndex;
-    this.currentIndex = index;
-    this.current = this.links[this.currentIndex];
-    this.set();
-  }
-
-  enter() {
-    clearInterval(this.interval);
-  }
-
-  leave() {
-    // this.interval = setInterval(this.move, 1500);
-  }
-
-  ngOnInit(): void {
-    this.leave();
+  ngAfterViewInit(): void {
+    this.data.getLiveTrending().subscribe((trend) => {
+      this.links = trend;
+      setInterval(this.move, 1500);
+    });
   }
 }

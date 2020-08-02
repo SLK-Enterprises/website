@@ -17,7 +17,15 @@ export class DataService {
     );
   }
 
+  public getLiveTrending() {
+    return this.firestore.collection('trending').valueChanges();
+  }
+
   public getLiveData() {
     return this.firestore.collection('dth-providers').valueChanges();
+  }
+
+  public getIcons() {
+    return this.firestore.doc('icons/service-tab').valueChanges();
   }
 }
