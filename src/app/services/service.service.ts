@@ -18,8 +18,10 @@ export class ServiceService {
   }
 
   public support(data) {
-    this.config.getBackend().subscribe((val) => {
-      this.http.post(val + 'support', data);
+    this.config.getBackend().subscribe((val: any) => {
+      this.http.post(val.link + 'support/', data).subscribe((result) => {
+        console.log(result);
+      });
     });
   }
 }

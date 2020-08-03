@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment.prod';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -12,13 +11,13 @@ export class DataService {
   constructor(private http: HttpClient, public firestore: AngularFirestore) {}
 
   public getdthproviders() {
-    this.getBackend().subscribe((val) => {
-      this.dataproviders = this.http.get(val + 'dth-providers');
+    this.getBackend().subscribe((val: any) => {
+      this.dataproviders = this.http.get(val.link + 'dth-providers');
     });
   }
 
   public getBackend() {
-    return this.firestore.doc('trending/config').valueChanges();
+    return this.firestore.doc('config/backend').valueChanges();
   }
 
   public getLiveTrending() {
