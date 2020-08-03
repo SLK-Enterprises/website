@@ -14,7 +14,7 @@
 
     .header {
       img {
-        width: 100px;
+        width: 100px !important;
       }
     }
 
@@ -69,5 +69,22 @@
     img {
       width: 100px !important;
     }
+  }
+}
+
+img {
+  animation: opacity 1000ms ease-in;
+}
+
+@keyframes opacity {
+  0% {
+    display: none;
+    opacity: 0;
+    // filter: blur(5px);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    // filter: blur(0px);
   }
 }

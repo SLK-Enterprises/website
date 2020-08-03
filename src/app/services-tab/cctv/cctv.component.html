@@ -19,7 +19,9 @@
       cdkTreeNodeToggle
       class="node"
     >
-      <h2>{{ node.name }}</h2>
+      <h2>
+        <li>{{ node.name }}</li>
+      </h2>
     </button>
 
     <div [class.example-tree-invisible]="!treeControl.isExpanded(node)">

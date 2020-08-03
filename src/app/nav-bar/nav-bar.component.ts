@@ -47,6 +47,7 @@ import { DataService } from '../services/data/data.service';
 export class NavBarComponent implements OnInit {
   ismenu = false;
   searchKey: String;
+  menu = ['Home', 'Services', 'Gallery', 'Contact', 'Support', 'Feedback'];
   icons;
   constructor(
     private _bottomSheet: MatBottomSheet,
@@ -59,10 +60,10 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  open(des) {
+  open(des: String) {
     this.ismenu = !this.ismenu;
 
-    switch (des) {
+    switch (des.toLowerCase()) {
       case 'gallery':
         this.gallery();
         break;

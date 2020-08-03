@@ -14,6 +14,21 @@ import { NetworkingProductsComponent } from './networking-products/networking-pr
   styleUrls: ['./services-tab.component.scss'],
 })
 export class ServicesTabComponent implements OnInit {
+  services = [
+    'DTH',
+    'Broadband & Digital TV',
+    'Optical Fiber Cable',
+    'Wireless',
+    'CCTV',
+    'Networking Products',
+  ];
+
+  getIcon(link: String) {
+    return this.icons[
+      link.split(' ').join('').split('&').join('').toLowerCase()
+    ];
+  }
+
   icons;
   constructor(public dialog: MatDialog, public data: DataService) {
     data.getIcons().subscribe((icon) => {
@@ -23,13 +38,13 @@ export class ServicesTabComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  open(key) {
+  open(key: String) {
     let component;
-    switch (key) {
+    switch (key.split('&').join('').split(' ').join('').toLowerCase()) {
       case 'dth':
         component = DthComponent;
         break;
-      case 'opticalfiber':
+      case 'opticalfibercable':
         component = OpticalfiberComponent;
         break;
       case 'wireless':
@@ -38,7 +53,7 @@ export class ServicesTabComponent implements OnInit {
       case 'cctv':
         component = CctvComponent;
         break;
-      case 'bb&dtv':
+      case 'broadbanddigitaltv':
         component = BroadbandDigitaltvComponent;
         break;
       case 'networkingproducts':

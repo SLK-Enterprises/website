@@ -13,13 +13,12 @@
 
 .node {
   margin: 10px;
-  color: rgba(0, 0, 0, 0.664);
+
+  mat-icon {
+    font-size: 10px;
+  }
 
   &:hover {
     color: #f3151a;
   }
-}
-
-.child {
-  color: black;
 }

@@ -26,6 +26,6 @@ export class DataService {
   }
 
   public getIcons() {
-    return this.firestore.doc('icons/service-tab').valueChanges();
+    return this.firestore.doc('icons/services-tab').valueChanges();
   }
 }
