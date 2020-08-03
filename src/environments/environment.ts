@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  backendlink: 'https://slk-enterprises.herokuapp.com/',
   firebase: {
     apiKey: 'AIzaSyC7hNkea_fUuQR2z0wpcHdM28gEnuoEx4M',
     authDomain: 'slk-enterprises.firebaseapp.com',

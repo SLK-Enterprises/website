@@ -12,9 +12,13 @@ export class DataService {
   constructor(private http: HttpClient, public firestore: AngularFirestore) {}
 
   public getdthproviders() {
-    this.dataproviders = this.http.get(
-      environment.backendlink + 'dth-providers'
-    );
+    this.getBackend().subscribe((val) => {
+      this.dataproviders = this.http.get(val + 'dth-providers');
+    });
+  }
+
+  public getBackend() {
+    return this.firestore.doc('trending/config').valueChanges();
   }
 
   public getLiveTrending() {
