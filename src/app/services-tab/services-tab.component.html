@@ -4,22 +4,29 @@
   </div>
 
   <div class="services-options">
-    <div id="dth" class="option" (click)="dth()">
+    <div id="dth" class="option" (click)="open('dth')">
       <img src="{{ icons.dth }}" />
-      <div class="title"><h2>DTH</h2></div>
+      <div class="title"><h3>DTH</h3></div>
     </div>
-    <div id="cctv" class="option">
-      <img src="{{ icons.cctv }}" style="width: 100px;" />
-
-      <div class="title"><h2>CCTV</h2></div>
+    <div id="dth" class="option" (click)="open('bb&dtv')">
+      <img src="{{ icons.dth }}" />
+      <div class="title"><h3>Broadband & Digital TV</h3></div>
     </div>
-    <div id="net" class="option" (click)="open()">
-      <img src="{{ icons.broadband }}" />
-      <div class="title"><h2>Broadband</h2></div>
-    </div>
-    <div id="fiber" class="option">
+    <div id="fiber" class="option" (click)="open('opticalfiber')">
       <img src="{{ icons.opticalfiber }}" />
-      <div class="title"><h2>Optical Fiber</h2></div>
+      <div class="title"><h3>Optical Fiber Cabel</h3></div>
+    </div>
+    <div id="cctv" class="option" (click)="open('wireless')">
+      <img src="{{ icons.cctv }}" />
+      <div class="title"><h3>Wireless</h3></div>
+    </div>
+    <div id="cctv" class="option" (click)="open('cctv')">
+      <img src="{{ icons.cctv }}" />
+      <div class="title"><h3>CCTV</h3></div>
+    </div>
+    <div id="net" class="option" (click)="open('networkingproducts')">
+      <img src="{{ icons.broadband }}" />
+      <div class="title"><h3>Networking Products</h3></div>
     </div>
   </div>
 </div>

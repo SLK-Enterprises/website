@@ -13,8 +13,6 @@ export class CarousalComponent implements AfterViewInit {
   constructor(public data: DataService) {}
 
   move = () => {
-    console.log(this.ind);
-
     let carousal: any = document.getElementsByClassName('carousal-image');
     this.ind = this.ind + 1;
 

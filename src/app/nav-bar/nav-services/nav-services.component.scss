@@ -1,0 +1,14 @@
+.nav-services {
+  display: flex;
+  flex-direction: column;
+  .service {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    text-align: start;
+
+    &:hover {
+      color: #f3151a;
+    }
+  }
+}

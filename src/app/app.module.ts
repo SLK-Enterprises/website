@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Inject } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,6 @@ import { MainContactComponent } from './nav-bar/contact/contact.component';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
-import { ChoiceComponent } from './services-tab/choice/choice.component';
 import { MatRippleModule } from '@angular/material/core';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DthComponent } from './services-tab/dth/dth.component';
@@ -33,7 +33,15 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+import { CctvComponent } from './services-tab/cctv/cctv.component';
+import { OpticalfiberComponent } from './services-tab/opticalfiber/opticalfiber.component';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { WirelessComponent } from './services-tab/wireless/wireless.component';
+import { BroadbandDigitaltvComponent } from './services-tab/broadband-digitaltv/broadband-digitaltv.component';
+import { NavServicesComponent } from './nav-bar/nav-services/nav-services.component';
+import { SupportComponent } from './nav-bar/support/support.component';
+import { FeedbackComponent } from './nav-bar/feedback/feedback.component';
+import { NetworkingProductsComponent } from './services-tab/networking-products/networking-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,11 +50,18 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     CarousalComponent,
     ServicesTabComponent,
     ContactComponent,
-    ChoiceComponent,
     MainContactComponent,
     DthComponent,
     ViewComponent,
     DthProviderComponent,
+    CctvComponent,
+    OpticalfiberComponent,
+    WirelessComponent,
+    BroadbandDigitaltvComponent,
+    NavServicesComponent,
+    SupportComponent,
+    FeedbackComponent,
+    NetworkingProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +86,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     // AngularFireAnalyticsModule,
     AngularFirestoreModule,
+    CdkTreeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

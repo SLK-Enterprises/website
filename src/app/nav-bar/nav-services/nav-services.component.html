@@ -1,0 +1,11 @@
+<div class="nav-services">
+  <button
+    mat-button
+    (click)="action(service)"
+    class="service"
+    mat-dialog-close
+    *ngFor="let service of services"
+  >
+    <h2>{{ service }}</h2>
+  </button>
+</div>

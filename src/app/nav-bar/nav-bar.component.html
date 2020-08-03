@@ -1,95 +1,39 @@
-<div class="nav-bar">
-  <div class="top">
-    <div class="logo">
-      <div class="menu">
-        <button mat-button [matMenuTriggerFor]="main">
-          <mat-icon class="menu-icon">menu</mat-icon>
-        </button>
-      </div>
-      <img src="assets/slklogo-1.png" (click)="nav('home')" />
+<div class="nav-bar" id="nav-bar">
+  <div class="logo">
+    <button mat-icon-button (click)="open('menu')">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="assets/slklogo-1.png" />
+  </div>
+  <div class="mobile search">
+    <input [(ngModel)]="searchKey" (keyup.enter)="search()" />
+    <mat-icon>search</mat-icon>
+  </div>
+  <div class="options" [@openClose]="ismenu ? 'open' : 'closed'">
+    <button mat-icon-button class="mobile option back" (click)="open('menu')">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <button mat-button class="option" (click)="open('home')">
+      <h3>Home</h3>
+    </button>
+    <button mat-button class="option" (click)="open('services')">
+      <h3>Services</h3>
+    </button>
+    <button mat-button class="option" (click)="open('gallery')">
+      <h3>Gallery</h3>
+    </button>
+    <button mat-button class="option" (click)="open('contact')">
+      <h3>Contact</h3>
+    </button>
+    <button mat-button class="option" (click)="open('support')">
+      <h3>Support</h3>
+    </button>
+    <button mat-button class="option" (click)="open('feedback')">
+      <h3>Feedback</h3>
+    </button>
+    <div class="option search">
+      <input [(ngModel)]="searchKey" (keyup.enter)="search()" />
+      <mat-icon>search</mat-icon>
     </div>
-
-    <div class="options pc">
-      <button mat-button class="option">
-        <h3 class="title home" (click)="nav('home')">
-          Home
-        </h3>
-      </button>
-
-      <button mat-button class="option" [matMenuTriggerFor]="menu">
-        <h4 class="title">Services <mat-icon>keyboard_arrow_down</mat-icon></h4>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item [matMenuTriggerFor]="dth">
-            <span>DTH</span>
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="cctv">
-            <span>CCTV Camera</span>
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="bb">
-            <span>Broadband</span>
-          </button>
-          <button mat-menu-item [matMenuTriggerFor]="fiber">
-            <span>Optic Fiber</span>
-          </button>
-        </mat-menu>
-        <mat-menu #dth="matMenu">
-          <button mat-menu-item (click)="nav('dth-provider')">
-            New Connection
-          </button>
-          <button mat-menu-item>House to House Shifting</button>
-          <button mat-menu-item>Complaints</button>
-        </mat-menu>
-        <mat-menu #cctv="matMenu">
-          <button mat-menu-item>Data 1</button>
-          <button mat-menu-item>Data 2</button>
-        </mat-menu>
-        <mat-menu #bb="matMenu">
-          <button mat-menu-item>Fiber to the Home ( FTTH )</button>
-          <button mat-menu-item>Wireless</button>
-        </mat-menu>
-        <mat-menu #fiber="matMenu">
-          <button mat-menu-item>Data 1</button>
-          <button mat-menu-item>Data 2</button>
-        </mat-menu>
-      </button>
-
-      <!-- Gallery -->
-      <button mat-button class="option" (click)="gallery()">
-        <h4 class="title">Gallery <mat-icon>keyboard_arrow_up</mat-icon></h4>
-      </button>
-
-      <button mat-button class="option" (click)="contact()">
-        <h4 class="title">Contact</h4>
-      </button>
-      <button mat-button class="option">
-        <h4 class="title">Feedback</h4>
-      </button>
-
-      <!-- Search -->
-      <div class="option search">
-        <input />
-        <mat-icon>search</mat-icon>
-      </div>
-    </div>
-
-    <mat-menu #main="matMenu">
-      <div class="options mobile">
-        <div class="option">
-          <button mat-button (click)="nav('home')">Home</button>
-        </div>
-        <div class="option">
-          <button mat-menu-item [matMenuTriggerFor]="menu">Services</button>
-        </div>
-        <div class="option">
-          <button mat-button (click)="gallery()">Gallery</button>
-        </div>
-        <div class="option">
-          <button mat-button (click)="contact()">Contact</button>
-        </div>
-        <div class="option">
-          <button mat-button>Feedback</button>
-        </div>
-      </div>
-    </mat-menu>
   </div>
 </div>

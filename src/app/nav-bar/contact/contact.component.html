@@ -1,38 +1,27 @@
-<div class="contact">
-  <div class="detail">
-    <mat-icon>phone</mat-icon>
-    <button
-      mat-button
-      class="bt"
-      [cdkCopyToClipboard]="phone1"
-      mat-dialog-close
-    >
-      <h2>89856 44456 ,</h2>
+<div class="contact-form">
+  <div class="option">
+    <div class="icon"><mat-icon>phone</mat-icon></div>
+    <button mat-button mat-dialog-close [cdkCopyToClipboard]="phone1">
+      <h3>89856 44456 ,</h3>
     </button>
-    <button
-      mat-button
-      class="bt"
-      [cdkCopyToClipboard]="phone2"
-      mat-dialog-close
-    >
-      <h2>89854 89856</h2>
+    <button mat-button mat-dialog-close [cdkCopyToClipboard]="phone2">
+      <h3>89854 89856</h3>
     </button>
   </div>
-  <div class="detail" style="display: flex; align-items: center;">
-    <img class="wh" src="assets/ico/wh.png" />
-    <button
-      mat-button
-      class="bt"
-      [cdkCopyToClipboard]="whatsapp"
-      mat-dialog-close
-    >
-      <h2>89856 44456</h2>
+  <div class="option">
+    <div class="icon whatsapp">
+      <img src="assets/ico/wh.png" />
+    </div>
+    <button mat-button mat-dialog-close [cdkCopyToClipboard]="whatsapp">
+      <h3>89856 44456</h3>
     </button>
   </div>
-  <div class="detail">
-    <mat-icon>email</mat-icon>
-    <button mat-button class="bt" [cdkCopyToClipboard]="mail" mat-dialog-close>
-      <h2>slkenterprises456@gmail.com</h2>
+  <div class="option">
+    <div class="icon">
+      <mat-icon>mail</mat-icon>
+    </div>
+    <button mat-button mat-dialog-close [cdkCopyToClipboard]="mail">
+      <h3>slkenterprises456@gmail.com</h3>
     </button>
   </div>
 </div>

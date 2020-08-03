@@ -1,0 +1,25 @@
+.example-tree-invisible {
+  display: none;
+}
+
+.tree-node {
+  display: block;
+  font-size: 1.2em;
+}
+
+.tree-node .tree-node {
+  padding-left: 40px;
+}
+
+.node {
+  margin: 10px;
+  color: rgba(0, 0, 0, 0.664);
+
+  &:hover {
+    color: #f3151a;
+  }
+}
+
+.child {
+  color: black;
+}
