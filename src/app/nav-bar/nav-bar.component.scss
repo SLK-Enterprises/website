@@ -10,7 +10,7 @@
 
   .logo {
     img {
-      max-height: 50px;
+      max-height: 70px;
     }
     button {
       display: none;
@@ -44,6 +44,7 @@
     background-color: transparent;
     border: 0;
     color: white;
+    outline: 0;
   }
 }
 
@@ -60,10 +61,14 @@
       display: flex;
       align-items: center;
       color: white;
+      margin: 10px;
     }
     .logo {
       display: flex;
       align-items: center;
+      img {
+        max-width: 70px;
+      }
       button {
         display: block;
         mat-icon {
@@ -101,6 +106,13 @@
         text-align: start;
         color: white;
         font-size: 1em;
+      }
+
+      .home {
+        background-color: white;
+        color: rgb(235, 49, 49);
+        width: max-content;
+        margin-left: -20px;
       }
 
       .back {

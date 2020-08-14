@@ -3,6 +3,8 @@ import { ServiceService } from '../../services/service.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatDialog } from '@angular/material/dialog';
+import { MainContactComponent } from 'src/app/nav-bar/contact/contact.component';
 
 interface Node {
   name: string;
@@ -30,7 +32,8 @@ export class DthComponent implements OnInit {
   icons;
   constructor(
     private route: ServiceService,
-    @Inject(MAT_DIALOG_DATA) public data
+    @Inject(MAT_DIALOG_DATA) public data,
+    public dialog: MatDialog
   ) {
     this.icons = data.icon;
   }
@@ -44,6 +47,10 @@ export class DthComponent implements OnInit {
 
   hasChild = (_: number, node: Node) =>
     !!node.children && node.children.length > 0;
+
+  openu(data) {
+    this.dialog.open(MainContactComponent, { autoFocus: false });
+  }
 
   action(target: String) {
     target = target.split(' ').join('').toLocaleLowerCase();
@@ -66,9 +73,13 @@ export class DthComponent implements OnInit {
     this.open('dth-provider');
   }
 
-  housetohouseshifting() {}
+  housetohouseshifting() {
+    this.openu('null');
+  }
 
-  complaints() {}
+  complaints() {
+    this.openu('null');
+  }
 
   ngOnInit(): void {}
 }

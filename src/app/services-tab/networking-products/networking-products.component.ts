@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatDialog } from '@angular/material/dialog';
+import { MainContactComponent } from 'src/app/nav-bar/contact/contact.component';
 
 interface Node {
   name: string;
@@ -10,15 +12,15 @@ interface Node {
 
 const TREE_DATA: Node[] = [
   {
-    name: 'Optical Transceivers',
+    name: 'OPTICAL TRANSCEIVERS',
     children: [
       { name: 'QSFP 28 (100G)', children: [] },
       { name: 'QSFP (40G)', children: [] },
-      { name: 'SFP+SM/MM DUAL FIBER', children: [] },
+      { name: 'SFP+SM/MM Dual Fiber', children: [] },
       { name: 'SFP-10G-CWDM', children: [] },
-      { name: 'XFP 10G DUAL FIBER', children: [] },
-      { name: 'AOC CABLE', children: [] },
-      { name: 'DAC CABLE', children: [] },
+      { name: 'XFP 10G Dual Fiber', children: [] },
+      { name: 'AOC Cable', children: [] },
+      { name: 'DAC Cable', children: [] },
     ],
   },
   {
@@ -33,14 +35,14 @@ const TREE_DATA: Node[] = [
     ],
   },
   {
-    name: 'Networking Switches',
+    name: 'NETWORKING SWITCHES',
     children: [
-      { name: 'AI POE SWITCH UNMANAGED', children: [] },
-      { name: 'EPOE SWITCH MANAGED', children: [] },
-      { name: 'REVERSE PoE SWITCH', children: [] },
-      { name: 'PoE switch L2 managed', children: [] },
-      { name: 'POE switch industry', children: [] },
-      { name: 'Fiber switch', children: [] },
+      { name: 'AI POE Switch Unmanaged', children: [] },
+      { name: 'EPOE Switch Managed', children: [] },
+      { name: 'Reverse PoE Switch', children: [] },
+      { name: 'PoE Switch L2 Managed', children: [] },
+      { name: 'POE Switch Industry', children: [] },
+      { name: 'Fiber Switch', children: [] },
     ],
   },
   {
@@ -58,11 +60,11 @@ const TREE_DATA: Node[] = [
   {
     name: 'PASSIVE NETWORKING',
     children: [
-      { name: 'UTP cable', children: [] },
-      { name: 'SFTP cable', children: [] },
-      { name: 'FIBER / DROP cable', children: [] },
-      { name: 'Fiber unarmoured cable', children: [] },
-      { name: 'Patch cord', children: [] },
+      { name: 'UTP Cable', children: [] },
+      { name: 'SFTP Cable', children: [] },
+      { name: 'Fiber / Drop Cable', children: [] },
+      { name: 'Fiber Unarmoured Cable', children: [] },
+      { name: 'Patch Cord', children: [] },
     ],
   },
   {
@@ -73,7 +75,7 @@ const TREE_DATA: Node[] = [
       { name: 'FDB with Loaded', children: [] },
       { name: 'FTTH Box', children: [] },
       { name: 'Fast Connector', children: [] },
-      { name: 'LIU/FMS wallmount', children: [] },
+      { name: 'LIU/FMS Wallmount', children: [] },
       { name: 'LIU/FMS Rackmount', children: [] },
     ],
   },
@@ -96,7 +98,7 @@ const TREE_DATA: Node[] = [
 })
 export class NetworkingProductsComponent {
   icons;
-  constructor(@Inject(MAT_DIALOG_DATA) public data) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialog: MatDialog) {
     this.icons = data.icon;
   }
 
@@ -105,6 +107,10 @@ export class NetworkingProductsComponent {
 
   hasChild = (_: number, node: Node) =>
     !!node.children && node.children.length > 0;
+
+  open(data) {
+    this.dialog.open(MainContactComponent, { autoFocus: false });
+  }
 
   action(target: String) {
     // target = target.split(' ').join('').toLocaleLowerCase();

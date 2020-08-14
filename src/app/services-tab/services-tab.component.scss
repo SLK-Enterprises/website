@@ -59,3 +59,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .services {
+    // flex-direction: column;
+  }
+}

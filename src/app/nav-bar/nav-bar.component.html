@@ -15,6 +15,14 @@
     </button>
     <button
       mat-button
+      class="option home"
+      style="color: rgb(235, 49, 49);"
+      (click)="open('Home')"
+    >
+      <h3>Home</h3>
+    </button>
+    <button
+      mat-button
       *ngFor="let item of menu"
       class="option"
       (click)="open(item)"

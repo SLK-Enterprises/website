@@ -28,7 +28,7 @@ export class CarousalComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.data.getLiveTrending().subscribe((trend) => {
       this.links = trend;
-      setInterval(this.move, 1500);
+      setInterval(this.move, 2300);
     });
   }
 }

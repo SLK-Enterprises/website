@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { GalleryComponent } from './gallery/gallery.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
@@ -44,18 +44,20 @@ import { DataService } from '../services/data/data.service';
     ]),
   ],
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements AfterViewInit {
   ismenu = false;
   searchKey: String;
-  menu = ['Home', 'Services', 'Gallery', 'Contact', 'Support', 'Feedback'];
+  menu = ['Services', 'Gallery', 'Contact', 'Support', 'Feedback'];
   icons;
   constructor(
     private _bottomSheet: MatBottomSheet,
     private dialog: MatDialog,
     private route: ServiceService,
     public data: DataService
-  ) {
-    data.getIcons().subscribe((icon) => {
+  ) {}
+
+  ngAfterViewInit() {
+    this.data.getIcons().subscribe((icon) => {
       this.icons = icon;
     });
   }
@@ -188,6 +190,4 @@ export class NavBarComponent implements OnInit {
           autoFocus: false,
         });
   }
-
-  ngOnInit(): void {}
 }

@@ -3,6 +3,9 @@ import { ServiceService } from '../../services/service.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatDialog } from '@angular/material/dialog';
+import { MainContactComponent } from 'src/app/nav-bar/contact/contact.component';
+
 interface Node {
   name: string;
   children?: Node[];
@@ -34,7 +37,7 @@ const TREE_DATA: Node[] = [
     name: 'Wireless CCTV Cameras',
   },
   {
-    name: 'High Definition (HD) CCTV CamerasComplaints',
+    name: 'High Definition (HD) CCTV Camera Complaints',
   },
 ];
 
@@ -47,13 +50,17 @@ export class CctvComponent implements OnInit {
   icons;
   constructor(
     private route: ServiceService,
-    @Inject(MAT_DIALOG_DATA) public data
+    @Inject(MAT_DIALOG_DATA) public data,
+    public dialog: MatDialog
   ) {
     this.icons = data.icon;
   }
 
   open(des) {
     this.route.go(des);
+  }
+  openu(data) {
+    this.dialog.open(MainContactComponent, { autoFocus: false });
   }
 
   treeControl = new NestedTreeControl<Node>((node) => node.children);
@@ -77,6 +84,7 @@ export class CctvComponent implements OnInit {
     //   default:
     //     break;
     // }
+    this.openu('null');
   }
 
   ngOnInit(): void {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DthComponent } from './dth/dth.component';
 import { DataService } from '../services/data/data.service';
@@ -13,7 +13,7 @@ import { NetworkingProductsComponent } from './networking-products/networking-pr
   templateUrl: './services-tab.component.html',
   styleUrls: ['./services-tab.component.scss'],
 })
-export class ServicesTabComponent implements OnInit {
+export class ServicesTabComponent implements AfterViewInit {
   services = [
     'DTH',
     'Broadband & Digital TV',
@@ -29,14 +29,14 @@ export class ServicesTabComponent implements OnInit {
     ];
   }
 
-  icons;
-  constructor(public dialog: MatDialog, public data: DataService) {
-    data.getIcons().subscribe((icon) => {
+  icons: any = {};
+  constructor(public dialog: MatDialog, public data: DataService) {}
+
+  ngAfterViewInit() {
+    this.data.getIcons().subscribe((icon) => {
       this.icons = icon;
     });
   }
-
-  ngOnInit(): void {}
 
   open(key: String) {
     let component;

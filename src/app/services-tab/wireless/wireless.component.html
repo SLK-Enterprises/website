@@ -1,6 +1,11 @@
 <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">
   <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="tree-node">
-    <button mat-button mat-dialog-close class="node child">
+    <button
+      (click)="open(node.name)"
+      mat-button
+      mat-dialog-close
+      class="node child"
+    >
       <h2>{{ node.name }}</h2>
     </button>
   </cdk-nested-tree-node>
