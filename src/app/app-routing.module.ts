@@ -6,7 +6,7 @@ import { DthProviderComponent } from './dth-provider/dth-provider.component';
 const routes: Routes = [
   { path: '', component: ViewComponent },
   { path: 'home', component: ViewComponent },
-  { path: 'dth-provider', pathMatch: 'full', component: DthProviderComponent },
+  { path: 'dth-provider', component: DthProviderComponent },
 ];
 
 @NgModule({
