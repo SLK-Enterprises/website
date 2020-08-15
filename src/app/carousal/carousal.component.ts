@@ -21,14 +21,14 @@ export class CarousalComponent implements AfterViewInit {
     }
 
     for (let i = 0; i < carousal.length; i++) {
-      carousal[i].style.transform = 'translate(' + this.ind * -95 + '%)';
+      carousal[i].style.transform = 'translate(' + this.ind * -95 + 'vw)';
     }
   };
 
   ngAfterViewInit(): void {
     this.data.getLiveTrending().subscribe((trend) => {
       this.links = trend;
-      setInterval(this.move, 2300);
+      setInterval(this.move, 4000);
     });
   }
 }

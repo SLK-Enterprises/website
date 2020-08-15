@@ -3,15 +3,15 @@
   overflow: hidden;
   display: flex;
   margin-top: 20px;
-  width: 95vw;
-  height: 40vh;
+  max-width: 95vw;
+  height: auto;
 
   .carousal-image {
     transition: transform 100ms ease-in;
 
     img {
-      width: 95vw;
-      height: 40vh;
+      max-width: 95vw;
+      height: auto;
     }
   }
 }
@@ -22,8 +22,8 @@
     height: 20vh;
     .carousal-image {
       img {
-        width: 95vw;
-        height: 20vh;
+        max-width: 95vw;
+        height: auto;
       }
     }
   }
