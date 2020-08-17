@@ -2,7 +2,7 @@
   margin: auto;
   overflow: hidden;
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
   max-width: 95vw;
   height: auto;
 
@@ -12,6 +12,7 @@
     img {
       max-width: 95vw;
       height: auto;
+      border-radius: 10px;
     }
   }
 }

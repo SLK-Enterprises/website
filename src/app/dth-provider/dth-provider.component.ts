@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data/data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MainContactComponent } from '../nav-bar/contact/contact.component';
 
 @Component({
   selector: 'app-dth-provider',
@@ -9,7 +11,7 @@ import { DataService } from '../services/data/data.service';
 export class DthProviderComponent implements OnInit {
   providers: any;
 
-  constructor(public data: DataService) {
+  constructor(public data: DataService, public dialog: MatDialog) {
     // data.getdthproviders();
     // data.dataproviders.subscribe((data) => {
     //   this.providers = data;
@@ -37,6 +39,10 @@ export class DthProviderComponent implements OnInit {
 
   getPlan(index) {
     return this.providers[index].plans[this.type];
+  }
+
+  open() {
+    this.dialog.open(MainContactComponent, { autoFocus: false });
   }
 
   sortDirection = false;

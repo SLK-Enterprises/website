@@ -44,7 +44,7 @@ import { DataService } from '../services/data/data.service';
     ]),
   ],
 })
-export class NavBarComponent implements AfterViewInit {
+export class NavBarComponent {
   ismenu = false;
   searchKey: String;
   menu = ['Services', 'Gallery', 'Contact', 'Support', 'Feedback'];
@@ -54,12 +54,15 @@ export class NavBarComponent implements AfterViewInit {
     private dialog: MatDialog,
     private route: ServiceService,
     public data: DataService
-  ) {}
+  ) {
+    this.ng();
+  }
 
-  ngAfterViewInit() {
+  ng() {
     this.data.getIcons().subscribe((icon) => {
       this.icons = icon;
     });
+    console.log(this.icons);
   }
 
   open(des: String) {
