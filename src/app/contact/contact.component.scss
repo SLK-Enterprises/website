@@ -1,8 +1,8 @@
 .contact {
-  margin-top: 50px;
+  margin-top: 100px;
 
   .details {
-    background-color: rgb(15, 15, 15);
+    background-color: black;
     color: rgba(0, 0, 0, 0.938);
     padding: 20px;
     padding-left: 50px;
@@ -47,13 +47,14 @@
 
       .sub-title {
         font-size: 25px;
+        color: rgba(245, 245, 245, 0.767);
       }
     }
   }
   .last-item {
     text-align: center;
     background-color: #000000;
-    color: #ffffff;
+    color: rgba(245, 245, 245, 0.767);
     padding: 10px;
   }
 }

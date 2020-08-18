@@ -3,11 +3,12 @@
   overflow: hidden;
   display: flex;
   margin-top: 30px;
-  max-width: 95vw;
+  max-width: 100vw;
   height: auto;
 
   .carousal-image {
     transition: transform 100ms ease-in;
+    margin: auto;
 
     img {
       max-width: 95vw;
