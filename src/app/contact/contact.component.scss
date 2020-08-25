@@ -37,9 +37,11 @@
 
       .phone {
         font-size: 35px;
+
         .comma {
           display: none;
         }
+
         div {
           margin-bottom: 10px;
         }
@@ -51,33 +53,43 @@
       }
     }
   }
+
   .last-item {
     text-align: center;
     background-color: #000000;
     color: rgba(245, 245, 245, 0.767);
     padding: 10px;
+
+    a {
+      color: #f3151a;
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .contact {
     width: 100%;
+
     .details {
       flex-direction: column;
+
       .sub {
         margin: 0px;
+
         .fix {
           // display: none !important;
           // margin-top: 28px;
           margin-left: -13px;
           margin-bottom: 0px;
         }
+
         .title {
           font-size: 15px;
         }
 
         .phone {
           display: flex;
+
           .comma {
             display: block;
             margin-right: 5px;

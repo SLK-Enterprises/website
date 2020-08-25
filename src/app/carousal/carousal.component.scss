@@ -3,7 +3,7 @@
   overflow: hidden;
   display: flex;
   margin-top: 30px;
-  max-width: 100vw;
+  max-width: 95vw;
   height: auto;
 
   .carousal-image {
@@ -11,7 +11,7 @@
     margin: auto;
 
     img {
-      max-width: 95vw;
+      width: 95vw;
       height: auto;
       border-radius: 10px;
     }
@@ -21,7 +21,7 @@
 @media only screen and (max-width: 600px) {
   .carousal {
     width: 95vw;
-    height: 20vh;
+    height: auto;
     .carousal-image {
       img {
         max-width: 95vw;
