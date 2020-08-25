@@ -1,0 +1,121 @@
+.nav-bar {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  box-shadow: 2px 2px 10px #bdbdbd;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.nav-bar .logo img {
+  max-height: 70px;
+}
+.nav-bar .logo button {
+  display: none;
+}
+.nav-bar .options {
+  display: flex;
+  align-items: center;
+}
+.nav-bar .options .option {
+  color: rgba(245, 245, 245, 0.767);
+  margin-left: 10px;
+}
+.nav-bar .options .option:hover {
+  color: white;
+}
+
+.search {
+  border: 3px solid rgba(245, 245, 245, 0.767);
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.search:hover {
+  border-color: white;
+}
+.search input {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  outline: 0;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+
+  .nav-bar .search {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 10px;
+  }
+  .nav-bar .logo {
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar .logo img {
+    max-width: 100px;
+  }
+  .nav-bar .logo button {
+    display: block;
+  }
+  .nav-bar .logo button mat-icon {
+    color: white;
+    vertical-align: middle;
+  }
+  .nav-bar .options {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: fixed;
+    flex-direction: column;
+    justify-content: start;
+    z-index: 5;
+    top: 0;
+    left: -55vw;
+    width: 50%;
+    height: 100%;
+    background-color: #ee2e31;
+    box-shadow: 2px 2px 10px #ee2e3179;
+    color: black;
+  }
+  .nav-bar .options .option {
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: start;
+    color: white;
+    font-size: 1em;
+  }
+  .nav-bar .options .home {
+    background-color: white;
+    color: #eb3131;
+    width: max-content;
+    margin-left: -20px;
+  }
+  .nav-bar .options .back {
+    display: flex;
+    margin-left: -50%;
+    padding: 5px;
+    align-items: center;
+    margin-top: 20px;
+    width: fit-content;
+  }
+  .nav-bar .options .back mat-icon {
+    vertical-align: middle;
+  }
+  .nav-bar .options .search {
+    display: none;
+  }
+}

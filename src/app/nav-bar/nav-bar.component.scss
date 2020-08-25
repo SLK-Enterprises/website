@@ -12,6 +12,7 @@
     img {
       max-height: 70px;
     }
+
     button {
       display: none;
     }
@@ -20,9 +21,11 @@
   .options {
     display: flex;
     align-items: center;
+
     .option {
       color: rgba(245, 245, 245, 0.767);
       margin-left: 10px;
+
       &:hover {
         color: white;
       }
@@ -40,6 +43,7 @@
   &:hover {
     border-color: white;
   }
+
   input {
     background-color: transparent;
     border: 0;
@@ -56,6 +60,7 @@
   .mobile {
     display: block;
   }
+
   .nav-bar {
     .search {
       display: flex;
@@ -63,14 +68,18 @@
       color: white;
       margin: 10px;
     }
+
     .logo {
       display: flex;
       align-items: center;
+
       img {
         max-width: 100px;
       }
+
       button {
         display: block;
+
         mat-icon {
           color: white;
           vertical-align: middle;
@@ -86,7 +95,8 @@
       justify-content: start;
       z-index: 5;
       top: 0;
-      left: 0;
+      left: -55vw;
+
       width: 50%;
       height: 100%;
       // background-color: rgb(142, 142, 236);
@@ -122,6 +132,7 @@
         align-items: center;
         margin-top: 20px;
         width: fit-content;
+
         mat-icon {
           vertical-align: middle;
         }

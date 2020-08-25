@@ -1,5 +1,19 @@
 <div class="carousal">
-  <div class="carousal-image" *ngFor="let item of links">
-    <img src="{{ item.link }}" alt="carousal-image" />
+  <div class="bt" (click)="moveLeft()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </div>
+  <div
+    class="carousal-image"
+    (mouseenter)="clear()"
+    (mouseleave)="start()"
+    *ngFor="let item of links"
+  >
+    <div
+      class="image"
+      [style.background-image]="'url(' + item.link + ')'"
+    ></div>
+  </div>
+  <div class="bt right" (click)="move()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
   </div>
 </div>

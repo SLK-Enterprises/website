@@ -1,0 +1,48 @@
+.carousal {
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 95vw;
+  height: auto;
+}
+.carousal .bt {
+  position: absolute;
+  height: 25px;
+  margin-top: 15%;
+  background-color: #fff9;
+  cursor: pointer;
+  z-index: 3;
+}
+.carousal .right {
+  left: 96.08%;
+}
+.carousal .carousal-image {
+  transition: transform 100ms ease-in;
+  margin: auto;
+}
+.carousal .carousal-image .image {
+  width: 95vw;
+  background-size: cover;
+  border-radius: 10px;
+  height: 32vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .carousal {
+    width: 95vw;
+    height: auto;
+  }
+  .carousal .bt {
+    margin-top: 60px;
+  }
+  .carousal .right {
+    left: 92%;
+  }
+  .carousal .carousal-image .image {
+    height: 40vw;
+  }
+}

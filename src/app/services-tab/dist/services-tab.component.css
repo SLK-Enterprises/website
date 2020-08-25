@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap");
+.services-tab {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+.services-tab .title {
+  margin: 30px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  width: 95%;
+  border-radius: 10px;
+}
+.services-tab .title h1 {
+  font-family: "Merriweather", serif;
+}
+.services-tab .title span {
+  color: #9e9e9e;
+}
+.services-tab .sub-title {
+  color: grey;
+}
+.services-tab .services {
+  display: flex;
+  width: 99%;
+}
+.services-tab .services .service {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid #383838;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.151);
+  text-align: center;
+}
+.services-tab .services .service:hover {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.151);
+}
+.services-tab .services .service:active {
+  box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.151);
+}
+.services-tab .services .service .icon {
+  margin: 5px;
+}
+.services-tab .services .service .icon img {
+  width: 80px;
+  height: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+  .services-tab .services {
+    overflow-x: scroll;
+  }
+  .services-tab .services .service {
+    padding: 10px !important;
+  }
+  .services-tab .services .service .icon img {
+    width: 60px;
+    height: 60px;
+  }
+}

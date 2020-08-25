@@ -3,17 +3,35 @@
   overflow: hidden;
   display: flex;
   margin-top: 30px;
+  margin-bottom: 30px;
   max-width: 95vw;
   height: auto;
+
+  .bt {
+    position: absolute;
+    height: 25px;
+    margin-top: 15%;
+    background-color: #fff9;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .right {
+    left: 96.08%;
+  }
 
   .carousal-image {
     transition: transform 100ms ease-in;
     margin: auto;
 
-    img {
+    .image {
       width: 95vw;
-      height: auto;
+      background-size: cover;
       border-radius: 10px;
+      height: 32vw;
+      background-repeat: no-repeat;
+      background-position: center;
+
     }
   }
 }
@@ -22,10 +40,21 @@
   .carousal {
     width: 95vw;
     height: auto;
+
+    .bt {
+      margin-top: 60px;
+
+    }
+
+    .right {
+      left: 92%;
+    }
+
     .carousal-image {
-      img {
-        max-width: 95vw;
-        height: auto;
+      .image {
+        // max-width: 95vw;
+        // background-size: contain;
+        height: 40vw;
       }
     }
   }
