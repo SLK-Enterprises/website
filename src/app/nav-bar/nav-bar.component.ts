@@ -48,7 +48,7 @@ export class NavBarComponent {
   ismenu = false;
   searchKey: String;
   menu = ['Services', 'Gallery', 'Contact', 'Support', 'Feedback'];
-  icons;
+  icons: any = {};
   constructor(
     private _bottomSheet: MatBottomSheet,
     private dialog: MatDialog,

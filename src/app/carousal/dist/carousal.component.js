@@ -38,10 +38,28 @@ var CarousalComponent = /** @class */ (function () {
     CarousalComponent.prototype.clear = function () {
         clearInterval(this.inter);
     };
+    CarousalComponent.prototype.sortLinks = function () {
+        for (var i = 0; i < this.links.length; i++) {
+            for (var j = 0; j < this.links.length - 1; j++) {
+                if (this.links[j].order > this.links[j + 1].order) {
+                    var temp = this.links[j];
+                    this.links[j] = this.links[j + 1];
+                    this.links[j + 1] = temp;
+                }
+            }
+        }
+    };
     CarousalComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
+        try {
+            clearInterval(this.inter);
+        }
+        catch (ex) {
+            console.log(ex);
+        }
         this.data.getLiveTrending().subscribe(function (trend) {
             _this.links = trend;
+            _this.sortLinks();
             _this.inter = setInterval(_this.move, 3000);
         });
     };

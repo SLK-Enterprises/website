@@ -25,8 +25,17 @@ export class CarousalComponent implements AfterViewInit {
     let carousal: any = document.getElementsByClassName('carousal-image');
     this.ind = this.ind + 1;
 
+    if (this.ind == 1) {
+      for (let i = 0; i < carousal.length; i++) {
+        carousal[i].style.transition = 'transform 750ms ease-out';
+      }
+    }
+
     if (this.ind == this.links.length) {
       this.ind = 0;
+      for (let i = 0; i < carousal.length; i++) {
+        carousal[i].style.transition = 'transform 2000ms ease-out';
+      }
     }
 
     for (let i = 0; i < carousal.length; i++) {
@@ -42,9 +51,27 @@ export class CarousalComponent implements AfterViewInit {
     clearInterval(this.inter);
   }
 
+  sortLinks() {
+    for (let i = 0; i < this.links.length; i++) {
+      for (let j = 0; j < this.links.length - 1; j++) {
+        if (this.links[j].order > this.links[j + 1].order) {
+          let temp = this.links[j];
+          this.links[j] = this.links[j + 1];
+          this.links[j + 1] = temp;
+        }
+      }
+    }
+  }
+
   ngAfterViewInit(): void {
+    try {
+      clearInterval(this.inter);
+    } catch (ex) {
+      console.log(ex);
+    }
     this.data.getLiveTrending().subscribe((trend) => {
       this.links = trend;
+      this.sortLinks();
       this.inter = setInterval(this.move, 3000);
     });
   }
