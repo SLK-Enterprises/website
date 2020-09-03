@@ -1,62 +1,82 @@
 .carousal {
-  margin: auto;
+  width: 95%;
+  height: 25em;
+  margin: 0 auto;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  max-width: 95vw;
-  height: auto;
 
-  .bt {
+
+  .carousal_button {
     position: absolute;
-    height: 25px;
-    transform: translateY(14vw);
-    background-color: transparent;
-    cursor: pointer;
-    color: rgb(80, 80, 80);
+    color: grey;
     z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
   }
+
 
   .right {
-    left: 96.08%;
+    left: 94.4%;
   }
 
-  .carousal-image {
-    transition: transform 750ms ease-out;
-    margin: auto;
+  .carousal_track_container {
+    margin-top: 40px;
+    height: 100%;
 
-    .image {
-      width: 95vw;
-      background-size: contain;
-      border-radius: 20px;
-      height: 32vw;
-      background-repeat: no-repeat;
-      // background-position: center;
 
+    .carousal_track {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .previous {
+        left: -100%;
+        display: block !important;
+      }
+
+      .current {
+        left: 0;
+        display: block !important;
+      }
+
+      .next {
+        left: 100%;
+        display: block !important;
+      }
+
+      .carousal_image {
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+        display: none;
+        transition: all 750ms ease;
+
+        img {
+          width: 100%;
+          border-radius: 20px;
+
+        }
+      }
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .carousal {
-    width: 95vw;
-    height: auto;
+    height: 180px;
 
-    .bt {
-      transform: translateY(17vw);
-
+    .carousal_button {
+      top: 59%;
+      padding: 0;
+      min-width: auto;
     }
 
     .right {
-      left: 92%;
+      left: 93.8%;
     }
 
-    .carousal-image {
-      .image {
-        // max-width: 95vw;   // background-size: contain;
-        height: 44vw;
-        background-repeat: round !important;
-      }
+    img {
+      height: 140px;
     }
   }
 }

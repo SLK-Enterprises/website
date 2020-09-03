@@ -1,19 +1,15 @@
-<div class="carousal">
-  <div class="bt" (click)="moveLeft()">
+<div class="carousal" (mouseenter)="enter()" (mouseleave)="leave()">
+  <button class="carousal_button left" (click)="reverseSlide()" mat-button>
     <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <div class="carousal_track_container">
+    <ul class="carousal_track">
+      <li class="carousal_image" *ngFor="let trend of links">
+        <img src="{{ trend.link }}" />
+      </li>
+    </ul>
   </div>
-  <div
-    class="carousal-image"
-    (mouseenter)="clear()"
-    (mouseleave)="start()"
-    *ngFor="let item of links"
-  >
-    <div
-      class="image"
-      [style.background-image]="'url(' + item.link + ')'"
-    ></div>
-  </div>
-  <div class="bt right" (click)="move()">
+  <button class="carousal_button right" (click)="moveSlide()" mat-button>
     <mat-icon>keyboard_arrow_right</mat-icon>
-  </div>
+  </button>
 </div>

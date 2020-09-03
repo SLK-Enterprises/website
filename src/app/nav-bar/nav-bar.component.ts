@@ -62,7 +62,6 @@ export class NavBarComponent {
     this.data.getIcons().subscribe((icon) => {
       this.icons = icon;
     });
-    console.log(this.icons);
   }
 
   open(des: String) {

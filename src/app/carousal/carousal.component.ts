@@ -8,71 +8,66 @@ import { DataService } from '../services/data/data.service';
 })
 export class CarousalComponent implements AfterViewInit {
   links: any[] = ['assets/carousal/1.jpg'];
-  ind = 0;
-  inter;
+  slides;
+  previous;
+  current;
+  next;
+  interval;
 
   constructor(public data: DataService) {}
 
-  moveLeft() {
-    this.ind = this.ind - 2;
-    if (this.ind < 0) {
-      this.ind = this.links.length - 2;
-    }
-    this.move();
+  enter() {
+    clearInterval(this.interval);
   }
 
-  move = () => {
-    let carousal: any = document.getElementsByClassName('carousal-image');
-    this.ind = this.ind + 1;
+  leave() {
+    this.interval = setInterval(this.moveSlide, 3500);
+  }
 
-    if (this.ind == 1) {
-      for (let i = 0; i < carousal.length; i++) {
-        carousal[i].style.transition = 'transform 750ms ease-out';
-      }
-    }
+  reverseSlide = () => {
+    this.slides[this.previous].classList.remove('previous');
+    this.slides[this.current].classList.remove('current');
+    this.slides[this.next].classList.remove('next');
 
-    if (this.ind == this.links.length) {
-      this.ind = 0;
-      for (let i = 0; i < carousal.length; i++) {
-        carousal[i].style.transition = 'transform 2000ms ease-out';
-      }
-    }
+    this.next = this.current;
+    this.current = this.previous;
+    this.previous = this.previous - 1;
 
-    for (let i = 0; i < carousal.length; i++) {
-      carousal[i].style.transform = 'translate(' + this.ind * -95 + 'vw)';
-    }
+    if (this.previous == -1) this.previous = this.slides.length - 1;
+
+    this.slides[this.previous].classList.add('previous');
+    this.slides[this.current].classList.add('current');
+    this.slides[this.next].classList.add('next');
   };
 
-  start() {
-    this.inter = setInterval(this.move, 3000);
-  }
+  moveSlide = () => {
+    this.slides[this.previous].classList.remove('previous');
+    this.slides[this.current].classList.remove('current');
+    this.slides[this.next].classList.remove('next');
 
-  clear() {
-    clearInterval(this.inter);
-  }
+    this.previous = this.current;
+    this.current = this.next;
+    this.next = this.next + 1;
 
-  sortLinks() {
-    for (let i = 0; i < this.links.length; i++) {
-      for (let j = 0; j < this.links.length - 1; j++) {
-        if (this.links[j].order > this.links[j + 1].order) {
-          let temp = this.links[j];
-          this.links[j] = this.links[j + 1];
-          this.links[j + 1] = temp;
-        }
-      }
-    }
+    if (this.next == this.slides.length) this.next = 0;
+
+    this.slides[this.previous].classList.add('previous');
+    this.slides[this.current].classList.add('current');
+    this.slides[this.next].classList.add('next');
+  };
+
+  startInterval() {
+    this.slides = document.getElementsByClassName('carousal_image');
+    this.previous = 0;
+    this.current = 1;
+    this.next = 2;
+    this.interval = setInterval(this.moveSlide, 3500);
   }
 
   ngAfterViewInit(): void {
-    try {
-      clearInterval(this.inter);
-    } catch (ex) {
-      console.log(ex);
-    }
     this.data.getLiveTrending().subscribe((trend) => {
       this.links = trend;
-      this.sortLinks();
-      this.inter = setInterval(this.move, 3000);
     });
+    this.startInterval();
   }
 }
