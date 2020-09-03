@@ -64,10 +64,23 @@ export class CarousalComponent implements AfterViewInit {
     this.interval = setInterval(this.moveSlide, 3500);
   }
 
+  sortLinks() {
+    for (let i = 0; i < this.links.length; i++) {
+      for (let j = 0; j < this.links.length - 1; j++) {
+        if (this.links[j].order > this.links[j + 1].order) {
+          let temp = this.links[j];
+          this.links[j] = this.links[j + 1];
+          this.links[j + 1] = temp;
+        }
+      }
+    }
+  }
+
   ngAfterViewInit(): void {
     this.data.getLiveTrending().subscribe((trend) => {
       this.links = trend;
+      this.sortLinks();
+      this.startInterval();
     });
-    this.startInterval();
   }
 }
