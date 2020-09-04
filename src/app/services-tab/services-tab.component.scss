@@ -36,6 +36,7 @@
   .services {
     display: flex;
     width: 99%;
+    justify-content: space-evenly;
 
     .service {
       margin: 20px;
@@ -48,6 +49,7 @@
       border-radius: 10px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.151);
       text-align: center;
+      width: 100px;
 
       &:hover {
         box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.151);
@@ -75,6 +77,7 @@
     .services {
       // flex-direction: column;
       overflow-x: scroll;
+      justify-content: start;
 
       .service {
         padding: 10px !important;

@@ -1,6 +1,6 @@
 .carousal {
   width: 95%;
-  height: 25em;
+  height: 29em;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -42,6 +42,7 @@
       .next {
         left: 100%;
         display: block !important;
+
       }
 
       .carousal_image {
@@ -49,12 +50,11 @@
         position: absolute;
         object-fit: cover;
         display: none;
-        transition: all 750ms ease;
+        transition: all 900ms ease;
 
         img {
           width: 100%;
           border-radius: 20px;
-
         }
       }
     }
@@ -63,7 +63,7 @@
 
 @media only screen and (max-width: 600px) {
   .carousal {
-    height: 196px;
+    height: 215px;
 
     .carousal_button {
       top: 53%;
@@ -79,7 +79,7 @@
       margin-top: 20px;
 
       img {
-        height: 167px;
+        height: 195px;
       }
     }
 

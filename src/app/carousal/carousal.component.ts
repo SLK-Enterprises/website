@@ -21,13 +21,13 @@ export class CarousalComponent implements AfterViewInit {
   }
 
   leave() {
-    this.interval = setInterval(this.moveSlide, 3500);
+    this.interval = setInterval(this.moveSlide, 3000);
   }
 
   reverseSlide = () => {
-    this.slides[this.previous].classList.remove('previous');
-    this.slides[this.current].classList.remove('current');
-    this.slides[this.next].classList.remove('next');
+    let a = this.previous;
+    let b = this.current;
+    let c = this.next;
 
     this.next = this.current;
     this.current = this.previous;
@@ -35,15 +35,20 @@ export class CarousalComponent implements AfterViewInit {
 
     if (this.previous == -1) this.previous = this.slides.length - 1;
 
+    this.slides[a].classList.remove('previous');
     this.slides[this.previous].classList.add('previous');
+
+    this.slides[b].classList.remove('current');
     this.slides[this.current].classList.add('current');
+
+    this.slides[c].classList.remove('next');
     this.slides[this.next].classList.add('next');
   };
 
   moveSlide = () => {
-    this.slides[this.previous].classList.remove('previous');
-    this.slides[this.current].classList.remove('current');
-    this.slides[this.next].classList.remove('next');
+    let a = this.previous;
+    let b = this.current;
+    let c = this.next;
 
     this.previous = this.current;
     this.current = this.next;
@@ -51,8 +56,13 @@ export class CarousalComponent implements AfterViewInit {
 
     if (this.next == this.slides.length) this.next = 0;
 
+    this.slides[a].classList.remove('previous');
     this.slides[this.previous].classList.add('previous');
+
+    this.slides[b].classList.remove('current');
     this.slides[this.current].classList.add('current');
+
+    this.slides[c].classList.remove('next');
     this.slides[this.next].classList.add('next');
   };
 
@@ -61,7 +71,7 @@ export class CarousalComponent implements AfterViewInit {
     this.previous = 0;
     this.current = 1;
     this.next = 2;
-    this.interval = setInterval(this.moveSlide, 3500);
+    this.interval = setInterval(this.moveSlide, 3000);
   }
 
   sortLinks() {
